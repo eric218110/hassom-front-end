@@ -9,6 +9,7 @@ import {
   Divider,
   BottomContainer,
   ItemsBottom,
+  Text,
 } from "./styles";
 
 import {
@@ -54,11 +55,21 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
           </ItemHeader>
         </TopContainer>
         <BottomContainer>
-          <ItemsBottom>ERIC SILVA</ItemsBottom>
-          <ItemsBottom>ERIC SILVA</ItemsBottom>
-          <ItemsBottom>ERIC SILVA</ItemsBottom>
-          <ItemsBottom>ERIC SILVA</ItemsBottom>
-          <ItemsBottom>ERIC SILVA</ItemsBottom>
+          <ItemsBottom>
+            <Text>acessórios</Text>
+          </ItemsBottom>
+          <ItemsBottom>
+            <Text>categorias</Text>
+          </ItemsBottom>
+          <ItemsBottom>
+            <Text>meus pedidos</Text>
+          </ItemsBottom>
+          <ItemsBottom>
+            <Text>ofertas</Text>
+          </ItemsBottom>
+          <ItemsBottom>
+            <Text>fale conosco</Text>
+          </ItemsBottom>
         </BottomContainer>
       </Container>
     </React.Fragment>

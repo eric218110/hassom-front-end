@@ -5,7 +5,9 @@ export const GlobaStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-size: 14px;
+        font-size: 12px;
+    }
+    body{
         background-color: #FAFAFA
     }
     a {

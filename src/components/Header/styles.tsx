@@ -37,7 +37,6 @@ export const Text = styled.p`
   font-weight: bold;
   :hover {
     color: #616161;
-    cursor: default;
   }
 `;
 
@@ -75,8 +74,10 @@ export const ItemsBottom = styled.div`
   justify-content: center;
   height: 60%;
   width: 20%;
+  font-weight: bold;
+  color: #424242;
   :hover {
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     border: 0;
     cursor: pointer;
     border-radius: 4px;
