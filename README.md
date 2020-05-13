@@ -12,7 +12,8 @@ Projeto da cadeira de **Projeto de Sistemas de Informação**
 * Styled Components
 * React router DOM
 * Redux e react-redux
-* Material UI
+* React icons
+* React Spring
 * TypeScript
 
 ## Instalação
