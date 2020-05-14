@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 80%;
+  width: 70%;
   justify-content: space-around;
 `;
 
@@ -15,7 +15,7 @@ export const GroupItems = styled.div`
   margin: 5px;
   align-items: center;
   :hover {
-    background-color: #f5f5f5;
+    background-color: ${(prpos) => prpos.theme.color.background.hover};
     border: 0;
     cursor: pointer;
     border-radius: 4px;
@@ -25,6 +25,6 @@ export const GroupItems = styled.div`
 export const Text = styled.p`
   text-transform: uppercase;
   margin-left: 5px;
-  color: #424242;
+  color: ${(prpos) => prpos.theme.color.text.default};
   font-weight: bold;
 `;

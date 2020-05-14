@@ -5,10 +5,11 @@ export const GlobaStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-size: 12px;
+        font-size: ${(props) => props.theme.size.text};
     }
     body{
-        background-color: #FAFAFA
+        background-color: ${(props) => props.theme.color.background.default};
+        overflow-x: hidden;
     }
     a {
         text-decoration: none;

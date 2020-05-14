@@ -2,19 +2,19 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 1000px;
+  width: ${(props) => props.theme.size.max};
   margin: auto;
   height: 150px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
 `;
 
 export const TopContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: ${(props) => props.theme.size.container};
   flex-direction: row;
 `;
 
@@ -33,15 +33,12 @@ export const ItemsHeader = styled.div`
 
 export const Text = styled.p`
   text-transform: uppercase;
-  color: #424242;
+  color: ${(prpos) => prpos.theme.color.text.default};
   font-weight: bold;
-  :hover {
-    color: #616161;
-  }
 `;
 
 export const TextDecorated = styled(Text)`
-  color: #616161;
+  color: ${(prpos) => prpos.theme.color.text.secundary};
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: inherit;
   font-style: italic;
@@ -53,15 +50,15 @@ export const TextTitle = styled(Text)`
 `;
 
 export const Divider = styled.div`
-  background-color: #e0e0e0;
+  background-color: ${(props) => props.theme.color.text.secundary};
   height: 16px;
   width: 1px;
   margin: 0 10px;
 `;
 
 export const BottomContainer = styled.div`
-  width: 70%;
-  height: 100%;
+  width: 40%;
+  height: 7rem;
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -75,9 +72,10 @@ export const ItemsBottom = styled.div`
   height: 60%;
   width: 20%;
   font-weight: bold;
-  color: #424242;
+  color: ${(prpos) => prpos.theme.color.text.default};
   :hover {
-    background-color: #f5f5f5;
+    background-color: ${(prpos) => prpos.theme.color.background.hover};
+    color: ${(props) => props.theme.color.text.secundary};
     border: 0;
     cursor: pointer;
     border-radius: 4px;
