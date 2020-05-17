@@ -1,25 +1,27 @@
 import * as React from "react";
 import { Container, GroupItems, Text } from "./styles";
-import { FaRegCreditCard } from "react-icons/fa";
-import { GrDeliver } from "react-icons/gr";
+import { BsFillHouseFill } from "react-icons/bs";
 import { MdSecurity } from "react-icons/md";
+import { FaRegCreditCard } from "react-icons/fa";
+import Ink from "react-ink";
+
+const itens = [
+  { title: "Compre no cartão", icon: FaRegCreditCard },
+  { title: "Entrega em todo brasil", icon: BsFillHouseFill },
+  { title: "Segurança garantida", icon: MdSecurity },
+];
 
 export const CardInformation: React.FC = () => {
   return (
     <React.Fragment>
       <Container>
-        <GroupItems>
-          <FaRegCreditCard size={22} color={"#000"} />
-          <Text>Compre no cartão</Text>
-        </GroupItems>
-        <GroupItems>
-          <GrDeliver size={22} color={"#000"} />
-          <Text>entrega em todo brasil</Text>
-        </GroupItems>
-        <GroupItems>
-          <MdSecurity size={22} color={"#000"} />
-          <Text>segurança garantida</Text>
-        </GroupItems>
+        {itens.map((item) => (
+          <GroupItems key={item.title}>
+            <Ink />
+            <item.icon size={22} />
+            <Text>{item.title}</Text>
+          </GroupItems>
+        ))}
       </Container>
     </React.Fragment>
   );

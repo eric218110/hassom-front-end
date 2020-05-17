@@ -23,6 +23,11 @@ export const dark: DefaultTheme = {
     container: "1000px",
     max: "100vw",
     text: "12px",
+    weight: "600px",
+  },
+  style: {
+    padding: "5px 25px",
+    borderRadius: "5px",
   },
 };
 
@@ -49,5 +54,10 @@ export const light: DefaultTheme = {
     container: "1000px",
     max: "100vw",
     text: "12px",
+    weight: "600px",
+  },
+  style: {
+    padding: "5px 25px",
+    borderRadius: "5px",
   },
 };

@@ -9,7 +9,6 @@ import {
   Divider,
   BottomContainer,
   ItemsBottom,
-  Text,
 } from "./styles";
 
 import {
@@ -20,6 +19,7 @@ import {
   MdBrightness4,
   MdBrightness5,
 } from "react-icons/md";
+import Ink from "react-ink";
 
 interface IProps {
   userActive: boolean;
@@ -35,7 +35,10 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
             <MdHeadset color={"#000"} size={34} />
           </ItemHeader>
           <ItemsHeader>
-            <TextTitle>hassom</TextTitle>
+            <TextTitle>
+              <Ink />
+              hassom
+            </TextTitle>
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
@@ -56,19 +59,24 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
         </TopContainer>
         <BottomContainer>
           <ItemsBottom>
-            <Text>acessórios</Text>
+            <Ink />
+            acessórios
           </ItemsBottom>
           <ItemsBottom>
-            <Text>categorias</Text>
+            <Ink />
+            categorias
           </ItemsBottom>
           <ItemsBottom>
-            <Text>meus pedidos</Text>
+            <Ink />
+            meus pedidos
           </ItemsBottom>
           <ItemsBottom>
-            <Text>ofertas</Text>
+            <Ink />
+            ofertas
           </ItemsBottom>
           <ItemsBottom>
-            <Text>fale conosco</Text>
+            <Ink />
+            fale conosco
           </ItemsBottom>
         </BottomContainer>
       </Container>

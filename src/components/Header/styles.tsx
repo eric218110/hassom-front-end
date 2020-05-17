@@ -32,8 +32,10 @@ export const ItemsHeader = styled.div`
 `;
 
 export const Text = styled.p`
+  position: relative;
+  border-radius: ${(props) => props.theme.style.borderRadius};
   text-transform: uppercase;
-  color: ${(prpos) => prpos.theme.color.text.default};
+  color: ${(prpos) => prpos.theme.color.primary};
   font-weight: bold;
 `;
 
@@ -46,6 +48,7 @@ export const TextDecorated = styled(Text)`
   letter-spacing: 0.3rem;
 `;
 export const TextTitle = styled(Text)`
+  padding: ${(props) => props.theme.style.padding};
   font-size: 32px;
 `;
 
@@ -57,27 +60,23 @@ export const Divider = styled.div`
 `;
 
 export const BottomContainer = styled.div`
-  width: 40%;
+  width: 55%;
   height: 7rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-self: center;
   align-items: center;
+  bottom: 10px;
+  cursor: pointer;
 `;
 
 export const ItemsBottom = styled.div`
+  padding: ${(props) => props.theme.style.padding};
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60%;
-  width: 20%;
-  font-weight: bold;
-  color: ${(prpos) => prpos.theme.color.text.default};
-  :hover {
-    background-color: ${(prpos) => prpos.theme.color.background.hover};
-    color: ${(props) => props.theme.color.text.secundary};
-    border: 0;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+  font-size: 12px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  border: none;
 `;

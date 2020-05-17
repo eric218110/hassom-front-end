@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 70%;
-  justify-content: space-around;
+  width: 50%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 `;
 
 export const GroupItems = styled.div`

@@ -5,6 +5,11 @@ export const GlobaStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        list-style: none;
+        position: relative;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        color: ${(prpos) => prpos.theme.color.text.default};
+        font-weight: ${(props) => props.theme.size.weight};
     }
     p {
         font-size: ${(props) => props.theme.size.text};
@@ -16,5 +21,4 @@ export const GlobaStyles = createGlobalStyle`
     a {
         text-decoration: none;
     }
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 `;

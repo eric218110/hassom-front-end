@@ -24,6 +24,11 @@ declare module "styled-components" {
       container: string;
       max: string;
       text: string;
+      weight: string;
+    };
+    style: {
+      padding: string;
+      borderRadius: string;
     };
   }
 }
