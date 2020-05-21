@@ -6,7 +6,6 @@ export const GlobaStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         list-style: none;
-        position: relative;
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
         color: ${(prpos) => prpos.theme.color.text.default};
         font-weight: ${(props) => props.theme.size.weight};

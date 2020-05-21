@@ -3,7 +3,8 @@ import { DefaultTheme } from "styled-components";
 export const dark: DefaultTheme = {
   name: "dark",
   color: {
-    primary: "#BB86FC",
+    ripple: "#B39DDB",
+    primary: "#9575CD",
     primaryVariant: "#3700B3",
     secundary: "#03DAC6",
     secundaryVariant: "#018786",
@@ -29,11 +30,15 @@ export const dark: DefaultTheme = {
     padding: "5px 25px",
     borderRadius: "5px",
   },
+  time: {
+    ripple: 600,
+  },
 };
 
 export const light: DefaultTheme = {
   name: "light",
   color: {
+    ripple: "#C5CAE9",
     primary: "#6200EE",
     primaryVariant: "#3700B3",
     secundary: "#03DAC6",
@@ -59,5 +64,8 @@ export const light: DefaultTheme = {
   style: {
     padding: "5px 25px",
     borderRadius: "5px",
+  },
+  time: {
+    ripple: 600,
   },
 };

@@ -6,20 +6,24 @@ import {
   ItemsHeader,
   TextDecorated,
   TextTitle,
-  Divider,
   BottomContainer,
   ItemsBottom,
+  IconContainer,
 } from "./styles";
+
+import { IconButton } from "../library/Button";
 
 import {
   MdHeadset,
-  MdMenu,
   MdExitToApp,
   MdPersonPin,
   MdBrightness4,
   MdBrightness5,
 } from "react-icons/md";
-import Ink from "react-ink";
+
+import { FiMoreVertical } from "react-icons/fi";
+
+import { TextButton } from "../library/Button";
 
 interface IProps {
   userActive: boolean;
@@ -32,51 +36,49 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
       <Container>
         <TopContainer>
           <ItemHeader>
-            <MdHeadset color={"#000"} size={34} />
+            <IconButton>
+              <MdHeadset size={34} />
+            </IconButton>
           </ItemHeader>
           <ItemsHeader>
             <TextTitle>
-              <Ink />
-              hassom
+              <TextButton>hassom</TextButton>
             </TextTitle>
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
-            {darkMode ? (
-              <MdBrightness4 color={"#616161"} size={18} />
-            ) : (
-              <MdBrightness5 color={"#616161"} size={18} />
-            )}
-            <Divider />
-            <MdMenu color={"#616161"} size={18} />
-            <Divider />
-            {userActive ? (
-              <MdPersonPin color={"#616161"} size={18} />
-            ) : (
-              <MdExitToApp color={"#616161"} size={18} />
-            )}
+            <IconContainer>
+              {
+                darkMode 
+                ? <IconButton><MdBrightness5 size={24} /></IconButton>
+                : <IconButton><MdBrightness4 size={24} /></IconButton>
+              }
+              {
+                userActive
+                ? <IconButton><MdExitToApp size={24} /></IconButton>
+                :<IconButton><MdPersonPin size={24} /></IconButton>
+              }
+              <IconButton>
+                <FiMoreVertical size={24} />
+              </IconButton>
+            </IconContainer>
           </ItemHeader>
         </TopContainer>
         <BottomContainer>
           <ItemsBottom>
-            <Ink />
-            acessórios
+            <TextButton>acessórios</TextButton>
           </ItemsBottom>
           <ItemsBottom>
-            <Ink />
-            categorias
+            <TextButton>categorias</TextButton>
           </ItemsBottom>
           <ItemsBottom>
-            <Ink />
-            meus pedidos
+            <TextButton>meus pedidos</TextButton>
           </ItemsBottom>
           <ItemsBottom>
-            <Ink />
-            ofertas
+            <TextButton>ofertas</TextButton>
           </ItemsBottom>
           <ItemsBottom>
-            <Ink />
-            fale conosco
+            <TextButton>fale conosco</TextButton>
           </ItemsBottom>
         </BottomContainer>
       </Container>

@@ -21,7 +21,8 @@ export const TopContainer = styled.div`
 export const ItemHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 10%;
+  width: auto;
+  height: 40%;
 `;
 export const ItemsHeader = styled.div`
   display: flex;
@@ -52,26 +53,17 @@ export const TextTitle = styled(Text)`
   font-size: 32px;
 `;
 
-export const Divider = styled.div`
-  background-color: ${(props) => props.theme.color.text.secundary};
-  height: 16px;
-  width: 1px;
-  margin: 0 10px;
-`;
-
 export const BottomContainer = styled.div`
-  width: 55%;
+  width: 100%;
   height: 7rem;
   display: flex;
   justify-content: center;
   align-self: center;
   align-items: center;
   bottom: 10px;
-  cursor: pointer;
 `;
 
 export const ItemsBottom = styled.div`
-  padding: ${(props) => props.theme.style.padding};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,4 +71,11 @@ export const ItemsBottom = styled.div`
   border-radius: 2px;
   text-transform: uppercase;
   border: none;
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 `;

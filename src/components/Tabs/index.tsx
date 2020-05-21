@@ -8,7 +8,7 @@ import {
   ContainerPanel,
 } from "./styles";
 import { PanelItem } from "./Panel";
-import Ink from "react-ink";
+import { TextButton } from "../library/Button";
 
 interface IState {
   index: number;
@@ -121,10 +121,9 @@ export const Tabs: React.FC = () => {
             {items.map(({ tabs }) =>
               tabs.map((tab) => (
                 <Tab key={tab.key}>
-                  <p>
-                    <Ink />
-                    {tab.title}
-                  </p>
+                  <TextButton isElevation={false}>
+                    <p>{tab.title}</p>
+                  </TextButton>
                 </Tab>
               ))
             )}

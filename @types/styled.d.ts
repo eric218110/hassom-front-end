@@ -13,6 +13,7 @@ declare module "styled-components" {
         paper: string;
         hover: string;
       };
+      ripple: string;
       text: {
         default: string;
         primary: string;
@@ -29,6 +30,9 @@ declare module "styled-components" {
     style: {
       padding: string;
       borderRadius: string;
+    };
+    time: {
+      ripple: number;
     };
   }
 }

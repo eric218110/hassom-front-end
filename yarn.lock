@@ -8704,6 +8704,13 @@ react-easy-swipe@^0.0.18:
   dependencies:
     prop-types "^15.5.8"
 
+react-elastic-carousel@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/react-elastic-carousel/-/react-elastic-carousel-0.6.1.tgz#b979dfbd5c9a16e5ffa0b46f1edc395ca0463eed"
+  integrity sha512-mqS24wBLhfW66c117pstfSfaMAA1r3Hki8cuugXe03JubcHfIVPRO50+JLLVJ3D7TS1ZC5U01h+sGp3KUIdIZw==
+  dependencies:
+    react-swipeable "^5.5.1"
+
 react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
@@ -8715,11 +8722,6 @@ react-icons@^3.10.0:
   integrity sha512-WsQ5n1JToG9VixWilSo1bHv842Cj5aZqTGiS3Ud47myF6aK7S/IUY2+dHcBdmkQcCFRuHsJ9OMUI0kTDfjyZXQ==
   dependencies:
     camelcase "^5.0.0"
-
-react-ink@^6.4.0:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/react-ink/-/react-ink-6.4.0.tgz#fa1573104237d3c08bcbf06108f3197b16762f76"
-  integrity sha512-CucEgFtGVFd0yJ8a+fic7FRHPv8QDba7UOoTvg4ezaRLGA7/FitwiQMIydBfiaZ7v+mrCsqWaH2ZpmthZRMxgQ==
 
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.13.1"
@@ -8745,11 +8747,6 @@ react-responsive-carousel@^3.2.7:
     classnames "^2.2.5"
     prop-types "^15.5.8"
     react-easy-swipe "^0.0.18"
-
-react-ripples@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-ripples/-/react-ripples-2.2.1.tgz#bab529eb10e06f7e660561d97e2442a38b9f4687"
-  integrity sha512-TfLjgZICQlsYCN2iX4fdeZNjoDzhJVC7r+R3irqyaNvCtWezouS9j+sE+nwSk747irtV8RKRDHmwMmsNBOw8Qg==
 
 react-router-dom@^5.2.0:
   version "5.2.0"
@@ -8847,6 +8844,13 @@ react-spring@^8.0.27:
   dependencies:
     "@babel/runtime" "^7.3.1"
     prop-types "^15.5.8"
+
+react-swipeable@^5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-5.5.1.tgz#48ae6182deaf62f21d4b87469b60281dbd7c4a76"
+  integrity sha512-EQObuU3Qg3JdX3WxOn5reZvOSCpU4fwpUAs+NlXSN3y+qtsO2r8VGkVnOQzmByt3BSYj9EWYdUOUfi7vaMdZZw==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-tabs@^3.1.0:
   version "3.1.0"
@@ -9269,6 +9273,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+ripple-button@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/ripple-button/-/ripple-button-1.0.9.tgz#b4322a78a4281ad266bf83b4ccbbe171fe928c72"
+  integrity sha512-zoamFVBprWeQ9xqKQjstWCVWkiaKd0Z7ZEpX4EApSyJ/4gNHL2pkyyWNaJIdGF9O/1TuxkZk4UtFuHxDK9tOmw==
 
 rsvp@^4.8.4:
   version "4.8.5"

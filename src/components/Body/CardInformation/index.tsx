@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Container, GroupItems, Text } from "./styles";
+import { Container, Text } from "./styles";
 import { BsFillHouseFill } from "react-icons/bs";
 import { MdSecurity } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa";
-import Ink from "react-ink";
+import { TextButton } from "../../library/Button/";
 
 const itens = [
   { title: "Compre no cartão", icon: FaRegCreditCard },
@@ -16,11 +16,10 @@ export const CardInformation: React.FC = () => {
     <React.Fragment>
       <Container>
         {itens.map((item) => (
-          <GroupItems key={item.title}>
-            <Ink />
+          <TextButton key={item.title}>
             <item.icon size={22} />
             <Text>{item.title}</Text>
-          </GroupItems>
+          </TextButton>
         ))}
       </Container>
     </React.Fragment>
