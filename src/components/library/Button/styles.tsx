@@ -2,7 +2,8 @@ import Ripple from "ripple-button";
 import styled from "styled-components";
 
 interface IProps {
-  noElevation: boolean;
+  noElevation?: boolean;
+  disabled?: boolean;
 }
 
 export const Button = styled(Ripple).attrs((props) => ({
@@ -33,7 +34,7 @@ export const Button = styled(Ripple).attrs((props) => ({
 export const IconButton = styled(Ripple).attrs((props) => ({
   color: props.theme.color.ripple,
   duration: props.theme.time.ripple,
-}))`
+}))<IProps>`
   display: flex;
   justify-content: center;
   align-items: center;

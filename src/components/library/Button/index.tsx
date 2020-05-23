@@ -7,13 +7,11 @@ interface IProps {
 
 export const TextButton: React.FC<IProps> = ({ isElevation, children }) => (
   <Button
-    noElevation={isElevation === null ? false : !isElevation}
+    noElevation={isElevation === null ? false : true}
     children={children}
   />
 );
 
 export const IconButton: React.FC<IProps> = ({ isElevation, children }) => (
-  <ButtonIcon
-    children={children}
-  />
+  <ButtonIcon children={children} />
 );

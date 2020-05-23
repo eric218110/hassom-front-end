@@ -17,11 +17,11 @@ const Home: React.FC = () => {
   });
   const springSliderHeader = useSpring({
     opacity: 1,
-    marginLeft: 0,
+    marginBottom: 0,
     delay: 200,
     from: {
-      marginLeft: -1350,
-      opacity: 1,
+      marginBottom: -120,
+      opacity: 0,
     },
   });
   return (

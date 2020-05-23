@@ -137,7 +137,7 @@ export const Tabs: React.FC = () => {
                 <TitlePanel>{panel.title}</TitlePanel>
                 <ContainerPanel>
                   {panel.products.map((product) => (
-                    <PanelItem>{product.name}</PanelItem>
+                    <PanelItem key={product.name}>{product.name}</PanelItem>
                   ))}
                 </ContainerPanel>
               </TabPanel>
