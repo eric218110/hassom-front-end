@@ -1,4 +1,8 @@
 import * as React from "react";
+import { ApplicationStateReducer } from "../../store/";
+import { toggleTheme } from "../../store/theme/actions.theme";
+import { ThemeState } from "../../store/theme/types.theme";
+
 import {
   Container,
   TopContainer,
@@ -12,7 +16,6 @@ import {
 } from "./styles";
 
 import { IconButton } from "../library/Button";
-
 import {
   MdHeadset,
   MdExitToApp,
@@ -20,17 +23,17 @@ import {
   MdBrightness4,
   MdBrightness5,
 } from "react-icons/md";
-
 import { FiMoreVertical } from "react-icons/fi";
-
 import { TextButton } from "../library/Button";
+import { connect } from "react-redux";
 
 interface IProps {
-  userActive: boolean;
-  darkMode: boolean;
+  theme: ThemeState;
+  toggleTheme: typeof toggleTheme;
 }
 
-export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
+const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
+  const userActive = false;
   return (
     <React.Fragment>
       <Container>
@@ -47,17 +50,25 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
-            <IconContainer>
-              {
-                darkMode 
-                ? <IconButton><MdBrightness5 size={24} /></IconButton>
-                : <IconButton><MdBrightness4 size={24} /></IconButton>
-              }
-              {
-                userActive
-                ? <IconButton><MdExitToApp size={24} /></IconButton>
-                :<IconButton><MdPersonPin size={24} /></IconButton>
-              }
+            <IconContainer >
+              {theme.darkMode ? (
+                <IconButton>
+                  <MdBrightness5 size={24} />
+                </IconButton>
+              ) : (
+                <IconButton>
+                  <MdBrightness4 size={24} />
+                </IconButton>
+              )}
+              {userActive ? (
+                <IconButton>
+                  <MdExitToApp size={24} />
+                </IconButton>
+              ) : (
+                <IconButton>
+                  <MdPersonPin size={24} />
+                </IconButton>
+              )}
               <IconButton>
                 <FiMoreVertical size={24} />
               </IconButton>
@@ -85,3 +96,9 @@ export const Header: React.FC<IProps> = ({ darkMode, userActive }) => {
     </React.Fragment>
   );
 };
+
+const MapStateToProps = (state: ApplicationStateReducer) => ({
+  theme: state.theme,
+});
+
+export default connect(MapStateToProps, { toggleTheme })(Header);

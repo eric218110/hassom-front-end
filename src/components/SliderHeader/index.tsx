@@ -11,13 +11,26 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { IconButton } from "../library/Button/styles";
 import { data as dataItems } from "./data";
 
+interface IState {
+  slideIndex: number;
+}
+
 export const SliderHeader: React.FC = () => {
+  const [slide, setSlide] = React.useState<IState>({ slideIndex: 0 });
+
   return (
     <React.Fragment>
       <Container>
         <Carousel
-          autoplayInterval={5000}
-          autoplayReverse
+          slideIndex={slide.slideIndex}
+          afterSlide={(slideIndex) => {
+            setSlide({ slideIndex });
+            if (slideIndex === 3) {
+              setTimeout(() => {
+                setSlide({ slideIndex: 0 });
+              }, 3000);
+            }
+          }}
           scrollMode={"remainder"}
           enableKeyboardControls
           autoplay={true}

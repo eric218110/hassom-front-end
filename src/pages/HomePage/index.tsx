@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Header } from "../../components/Header";
+import Header from "../../components/Header";
 import { SliderHeader } from "../../components/SliderHeader";
 import { Body } from "../../components/Body";
 import { useSpring, animated } from "react-spring";
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   return (
     <React.Fragment>
       <animated.div style={springHeader}>
-        <Header userActive={false} darkMode={false} />
+        <Header />
       </animated.div>
       <animated.div style={springSliderHeader}>
         <SliderHeader />
