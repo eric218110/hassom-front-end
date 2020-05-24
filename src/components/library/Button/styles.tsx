@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface IProps {
   noElevation?: boolean;
   disabled?: boolean;
+  solid?: boolean;
 }
 
 export const Button = styled(Ripple).attrs((props) => ({
@@ -41,8 +42,10 @@ export const IconButton = styled(Ripple).attrs((props) => ({
   height: 1;
   padding: 9px;
   border-radius: 50%;
+  background-color: ${(props) =>
+    props.solid ? props.theme.color.primary : "transparent"};
   cursor: pointer;
-  :hover{
+  :hover {
     color: ${(props) => props.theme.color.primary};
   }
 `;

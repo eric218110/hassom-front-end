@@ -5,9 +5,13 @@ import {
   Image,
   BotoomCarrousel,
   ContainerText,
+  Text,
+  Subtitle,
+  Actions,
 } from "./styles";
 import Carousel from "nuka-carousel";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { RiExternalLinkLine } from "react-icons/ri";
 import { IconButton } from "../library/Button/styles";
 import { data as dataItems } from "./data";
 
@@ -55,7 +59,15 @@ export const SliderHeader: React.FC = () => {
           {dataItems.map(({ id, content }) => (
             <ImageContainer key={id}>
               <Image src={content.imageUrl} />
-              <ContainerText />
+              <ContainerText>
+                <Text>{content.text}</Text>
+                <Subtitle>{content.subTitle}</Subtitle>
+                <Actions>
+                  <IconButton solid>
+                    <RiExternalLinkLine size={24} />
+                  </IconButton>
+                </Actions>
+              </ContainerText>
               <BotoomCarrousel />
             </ImageContainer>
           ))}

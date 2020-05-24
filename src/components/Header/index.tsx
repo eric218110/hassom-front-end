@@ -15,7 +15,7 @@ import {
   IconContainer,
 } from "./styles";
 
-import { IconButton } from "../library/Button";
+import { IconButton, TextButton } from "../library/Button";
 import {
   MdHeadset,
   MdExitToApp,
@@ -24,7 +24,7 @@ import {
   MdBrightness5,
 } from "react-icons/md";
 import { FiMoreVertical } from "react-icons/fi";
-import { TextButton } from "../library/Button";
+import { IconButton as ButtonIcon } from "../library/Button";
 import { connect } from "react-redux";
 
 interface IProps {
@@ -50,7 +50,7 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
-            <IconContainer >
+            <IconContainer>
               {theme.darkMode ? (
                 <IconButton>
                   <MdBrightness5 size={24} />
