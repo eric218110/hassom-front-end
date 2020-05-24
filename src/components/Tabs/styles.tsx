@@ -14,8 +14,8 @@ export const ContainerPanel = styled.div`
   height: auto;
   justify-content: center;
   background-color: ${(props) => props.theme.color.background.default};
-  flex-wrap: wrap;
-  flex-grow: 3;
+  flex-wrap: nowrap;
+  flex-grow: 5;
 `;
 
 export const ContainerTabList = styled.div`
