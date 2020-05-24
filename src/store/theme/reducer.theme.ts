@@ -9,6 +9,7 @@ export function themeReducer(
   action: ThemeActionTypes
 ): ThemeState {
   if (action.type === TOGGLE_THEME) {
+    console.log(action)
     const { darkMode } = action.payload;
     action.payload.darkMode = !darkMode;
 

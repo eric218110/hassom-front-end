@@ -13,6 +13,7 @@ import {
   BottomContainer,
   ItemsBottom,
   IconContainer,
+  ContainerIcon,
 } from "./styles";
 
 import { IconButton, TextButton } from "../library/Button";
@@ -24,7 +25,6 @@ import {
   MdBrightness5,
 } from "react-icons/md";
 import { FiMoreVertical } from "react-icons/fi";
-import { IconButton as ButtonIcon } from "../library/Button";
 import { connect } from "react-redux";
 
 interface IProps {
@@ -52,13 +52,27 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
           <ItemHeader>
             <IconContainer>
               {theme.darkMode ? (
-                <IconButton>
-                  <MdBrightness5 size={24} />
-                </IconButton>
+                <ContainerIcon
+                  onClick={() => {
+                    toggleTheme({ darkMode: theme.darkMode });
+                  }}
+                >
+                  <MdBrightness5
+                    style={{ margin: "1rem", cursor: "pointer" }}
+                    size={24}
+                  />
+                </ContainerIcon>
               ) : (
-                <IconButton>
-                  <MdBrightness4 size={24} />
-                </IconButton>
+                <ContainerIcon
+                  onClick={() => {
+                    toggleTheme({ darkMode: theme.darkMode });
+                  }}
+                >
+                  <MdBrightness4
+                    style={{ margin: "1rem", cursor: "pointer" }}
+                    size={24}
+                  />
+                </ContainerIcon>
               )}
               {userActive ? (
                 <IconButton>
