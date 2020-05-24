@@ -11,6 +11,7 @@ export const Container = styled.div`
 `;
 
 export const BotoomCarrousel = styled.div`
+  cursor: default;
   background-color: ${(props) => props.theme.color.primary};
   background: linear-gradient(
     104deg,
@@ -28,7 +29,13 @@ export const ContainerText = styled.div`
   position: absolute;
   height: 50%;
   width: 100%;
-  bottom: 10%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  cursor: default;
 `;
 
 export const ImageContainer = styled.div`
@@ -46,4 +53,27 @@ export const Image = styled.div<IImageProps>`
   background-image: url(${(props) => props.src});
   background-position: center;
   background-size: cover;
+`;
+
+export const Text = styled.h1`
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: ${(props) => props.theme.color.text.secundary};
+`;
+
+export const Subtitle = styled.p`
+  font-size: 16px;
+  color: ${(prpos) => prpos.theme.color.text.secundary};
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: inherit;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0.3rem;
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

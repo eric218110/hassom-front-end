@@ -78,4 +78,7 @@ export const IconContainer = styled.div`
   justify-content: space-between;
   height: 100%;
   width: 100%;
+  align-items: center;
 `;
+
+export const ContainerIcon = styled.div``;

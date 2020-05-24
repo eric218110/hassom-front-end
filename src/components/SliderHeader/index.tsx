@@ -5,19 +5,36 @@ import {
   Image,
   BotoomCarrousel,
   ContainerText,
+  Text,
+  Subtitle,
+  Actions,
 } from "./styles";
 import Carousel from "nuka-carousel";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { RiExternalLinkLine } from "react-icons/ri";
 import { IconButton } from "../library/Button/styles";
 import { data as dataItems } from "./data";
 
+interface IState {
+  slideIndex: number;
+}
+
 export const SliderHeader: React.FC = () => {
+  const [slide, setSlide] = React.useState<IState>({ slideIndex: 0 });
+
   return (
     <React.Fragment>
       <Container>
         <Carousel
-          autoplayInterval={5000}
-          autoplayReverse
+          slideIndex={slide.slideIndex}
+          afterSlide={(slideIndex) => {
+            setSlide({ slideIndex });
+            if (slideIndex === 3) {
+              setTimeout(() => {
+                setSlide({ slideIndex: 0 });
+              }, 3000);
+            }
+          }}
           scrollMode={"remainder"}
           enableKeyboardControls
           autoplay={true}
@@ -42,7 +59,15 @@ export const SliderHeader: React.FC = () => {
           {dataItems.map(({ id, content }) => (
             <ImageContainer key={id}>
               <Image src={content.imageUrl} />
-              <ContainerText />
+              <ContainerText>
+                <Text>{content.text}</Text>
+                <Subtitle>{content.subTitle}</Subtitle>
+                <Actions>
+                  <IconButton solid>
+                    <RiExternalLinkLine size={24} />
+                  </IconButton>
+                </Actions>
+              </ContainerText>
               <BotoomCarrousel />
             </ImageContainer>
           ))}

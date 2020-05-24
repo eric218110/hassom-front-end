@@ -21,7 +21,7 @@ export const dark: DefaultTheme = {
     },
   },
   size: {
-    container: "1000px",
+    container: "1200px",
     max: "100vw",
     text: "12px",
     weight: "600px",
@@ -56,7 +56,7 @@ export const light: DefaultTheme = {
     },
   },
   size: {
-    container: "1000px",
+    container: "1200px",
     max: "100vw",
     text: "12px",
     weight: "600px",
