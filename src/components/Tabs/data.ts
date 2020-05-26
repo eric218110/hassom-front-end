@@ -1,6 +1,10 @@
 export interface IProducts {
+  id: string;
   name: string;
-  price: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+  interest: boolean;
 }
 
 export interface ITab {
@@ -33,24 +37,58 @@ export const items: IItems[] = [
         title: "Panel 1",
         products: [
           {
+            id: "1",
             name: "Product 1",
-            price: "R$ 10.00",
+            price: 10.0,
+            description: "Product description 1",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
           {
+            id: "2",
             name: "Product 12",
-            price: "R$ 120.00",
+            price: 120.0,
+            description: "Product description 2",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: true,
           },
           {
+            id: "3",
             name: "Product 13",
-            price: "R$ 130.00",
+            price: 130.0,
+            description: "Product description 3",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: true,
           },
           {
+            id: "4",
             name: "Product 14",
-            price: "R$ 140.00",
+            price: 140.0,
+            description: "Product description 4",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
           {
+            id: "5",
             name: "Product 15",
-            price: "R$ 150.00",
+            price: 150.0,
+            description: "Product description 5",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
+          },
+          {
+            id: "6",
+            name: "Product 16",
+            price: 160.0,
+            description: "Product description 6",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
         ],
       },
@@ -69,8 +107,13 @@ export const items: IItems[] = [
         title: "Panel 2",
         products: [
           {
+            id: "7",
             name: "Product 2",
-            price: "R$ 20.00",
+            price: 20.0,
+            description: "Product description 2",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
         ],
       },
@@ -89,8 +132,13 @@ export const items: IItems[] = [
         title: "Panel 3",
         products: [
           {
+            id: "8",
             name: "Product 3",
-            price: "R$ 30.00",
+            price: 30.0,
+            description: "Product description 3",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
         ],
       },
@@ -109,8 +157,13 @@ export const items: IItems[] = [
         title: "Panel 4",
         products: [
           {
+            id: "9",
             name: "Product 4",
-            price: "R$ 40.00",
+            price: 40.0,
+            description: "Product description 4",
+            imageUrl:
+              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
+            interest: false,
           },
         ],
       },
