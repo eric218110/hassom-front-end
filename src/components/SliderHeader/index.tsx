@@ -12,7 +12,7 @@ import {
 import Carousel from "nuka-carousel";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { RiExternalLinkLine } from "react-icons/ri";
-import { IconButton } from "../library/Button/styles";
+import { IconButton, MotionIcon } from "../library/Button/styles";
 import { data as dataItems } from "./data";
 
 interface IState {
@@ -63,9 +63,11 @@ export const SliderHeader: React.FC = () => {
                 <Text>{content.text}</Text>
                 <Subtitle>{content.subTitle}</Subtitle>
                 <Actions>
-                  <IconButton solid>
-                    <RiExternalLinkLine size={24} />
-                  </IconButton>
+                  <MotionIcon>
+                    <IconButton solid>
+                      <RiExternalLinkLine size={24} />
+                    </IconButton>
+                  </MotionIcon>
                 </Actions>
               </ContainerText>
               <BotoomCarrousel />

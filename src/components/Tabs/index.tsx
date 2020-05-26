@@ -15,26 +15,31 @@ import {
   DescriptionPanel,
   ContainerPrice,
   BottomPanel,
+  ContentBottom,
+  ContentPriceAndActions,
+  ContentPrice,
 } from "./styles";
 import { TextButton } from "../library/Button";
 import { items } from "./data";
+import { BsHeartFill } from "react-icons/bs";
+import { IconButton } from "../library/Button/styles";
 
 interface IState {
   index: number;
+  hoverMotion?: boolean;
 }
 
 export const Tabs: React.FC = () => {
-  const [indexTab, setIndexTab] = React.useState<IState>({ index: 0 });
+  const [state, setState] = React.useState<IState>({ index: 0 });
   const xPrice: number = 12;
-
   return (
     <Container>
       <TabReact
         selectedTabClassName={"selected"}
         defaultFocus={false}
-        selectedIndex={indexTab.index}
+        selectedIndex={state.index}
         onSelect={(index: number) => {
-          setIndexTab({
+          setState({
             index,
           });
         }}
@@ -62,26 +67,35 @@ export const Tabs: React.FC = () => {
                   {panel.products.map((product) => (
                     <ContentPanel key={product.id}>
                       <PanelImage urlImage={product.imageUrl} />
-                      {console.log(product.imageUrl)}
                       <DividerPanel />
                       <BottomPanel>
                         <ContainerPrice>
-                          <Real>
-                            R$ {product.price.toFixed(2).split(".")[0]}
-                          </Real>
-                          <Cents>
-                            {product.price.toFixed(2).split(".")[1]}
-                          </Cents>
+                          <ContentPriceAndActions>
+                            <ContentPrice>
+                              <Real>
+                                R$ {product.price.toFixed(2).split(".")[0]}
+                              </Real>
+                              <Cents>
+                                {product.price.toFixed(2).split(".")[1]}
+                              </Cents>
+                            </ContentPrice>
+                            <IconButton>
+                              <BsHeartFill />
+                            </IconButton>
+                          </ContentPriceAndActions>
                         </ContainerPrice>
-                        <SubtitlePrice>{`${xPrice.toString()}x R$ ${(
-                          product.price / xPrice
-                        ).toFixed(2)} ${
-                          product.interest ? "Sem juros" : ""
-                        }`}
-                        </SubtitlePrice>
-                        <DescriptionPanel>
-                          {product.description}
-                        </DescriptionPanel>
+                        <ContentBottom>
+                          <SubtitlePrice>
+                            {`${xPrice.toString()}x R$ ${(
+                              product.price / xPrice
+                            ).toFixed(2)} ${
+                              product.interest ? "Sem juros" : ""
+                            }`}
+                          </SubtitlePrice>
+                          <DescriptionPanel>
+                            {product.description}
+                          </DescriptionPanel>
+                        </ContentBottom>
                       </BottomPanel>
                     </ContentPanel>
                   ))}

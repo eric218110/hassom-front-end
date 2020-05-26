@@ -13,10 +13,11 @@ import {
   BottomContainer,
   ItemsBottom,
   IconContainer,
-  ContainerIcon,
 } from "./styles";
 
-import { IconButton, TextButton } from "../library/Button";
+import { IconButton, MotionIcon } from "../library/Button/styles";
+import { TextButton } from "../library/Button";
+
 import {
   MdHeadset,
   MdExitToApp,
@@ -25,7 +26,6 @@ import {
   MdBrightness5,
 } from "react-icons/md";
 import { FiMoreVertical } from "react-icons/fi";
-import { motion } from "framer-motion";
 import { connect } from "react-redux";
 
 interface IProps {
@@ -41,25 +41,11 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
       <Container>
         <TopContainer>
           <ItemHeader>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ rotate: 360, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                delay: 0.5,
-                damping: 20,
-              }}
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 0.5 },
-              }}
-              whileTap={{ scale: 0.9 }}
-            >
+            <MotionIcon>
               <IconButton>
                 <MdHeadset size={34} />
               </IconButton>
-            </motion.div>
+            </MotionIcon>
           </ItemHeader>
           <ItemsHeader>
             <TextTitle>
@@ -69,58 +55,45 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
           </ItemsHeader>
           <ItemHeader>
             <IconContainer>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ rotate: 360, scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  delay: 0.5,
-                  damping: 20,
-                }}
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.5 },
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {theme.darkMode ? (
-                  <ContainerIcon
-                    onClick={() => {
-                      toggleTheme({ darkMode: theme.darkMode });
-                    }}
-                  >
-                    <MdBrightness5
-                      style={{ margin: "1rem", cursor: "pointer" }}
-                      size={24}
-                    />
-                  </ContainerIcon>
-                ) : (
-                  <ContainerIcon
-                    onClick={() => {
-                      toggleTheme({ darkMode: theme.darkMode });
-                    }}
-                  >
-                    <MdBrightness4
-                      style={{ margin: "1rem", cursor: "pointer" }}
-                      size={24}
-                    />
-                  </ContainerIcon>
-                )}
-              </motion.div>
-
-              {userActive ? (
-                <IconButton>
-                  <MdExitToApp size={24} />
-                </IconButton>
+              {theme.darkMode ? (
+                <MotionIcon
+                  onClick={() => {
+                    toggleTheme({ darkMode: theme.darkMode });
+                  }}
+                >
+                  <MdBrightness5
+                    style={{ margin: "1rem", cursor: "pointer" }}
+                    size={24}
+                  />
+                </MotionIcon>
               ) : (
-                <IconButton>
-                  <MdPersonPin size={24} />
-                </IconButton>
+                <MotionIcon
+                  onClick={() => {
+                    toggleTheme({ darkMode: theme.darkMode });
+                  }}
+                >
+                  <MdBrightness4
+                    style={{ margin: "1rem", cursor: "pointer" }}
+                    size={24}
+                  />
+                </MotionIcon>
               )}
-              <IconButton>
-                <FiMoreVertical size={24} />
-              </IconButton>
+              <MotionIcon>
+                {userActive ? (
+                  <IconButton>
+                    <MdExitToApp size={24} />
+                  </IconButton>
+                ) : (
+                  <IconButton>
+                    <MdPersonPin size={24} />
+                  </IconButton>
+                )}
+              </MotionIcon>
+              <MotionIcon>
+                <IconButton>
+                  <FiMoreVertical size={24} />
+                </IconButton>
+              </MotionIcon>
             </IconContainer>
           </ItemHeader>
         </TopContainer>
