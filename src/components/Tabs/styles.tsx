@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface IImageProps {
   urlImage: string;
@@ -71,6 +72,7 @@ export const ContentPanel = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 17%;
+  background-color: black;
   height: 20rem;
   border-radius: ${(props) => props.theme.style.borderRadius};
   background-color: ${(props) => props.theme.color.background.default};
@@ -114,12 +116,39 @@ export const Real = styled.h1`
 
 export const Cents = styled.h4`
   font-size: 10px;
-  margin-top: 0.2rem;
+  align-self: flex-start;
+  justify-self: start;
 `;
 
 export const SubtitlePrice = styled.h6``;
+
+export const ContentPriceAndActions = styled.div`
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ContentPrice = styled.div`
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+`;
 
 export const DescriptionPanel = styled.p`
   margin-top: 20px;
   font-size: 12px;
 `;
+
+export const ContentBottom = styled(motion.div).attrs(() => ({
+  initial: { opacity: 0, y: 0, scale: 1, height: 10 },
+  whileHover: {
+    opacity: 1,
+    y: 10,
+    scale: 1,
+    transition: { duration: 0.5 },
+    height: 60,
+  },
+}))``;

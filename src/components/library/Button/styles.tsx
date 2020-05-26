@@ -1,5 +1,6 @@
 import Ripple from "ripple-button";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface IProps {
   noElevation?: boolean;
@@ -49,3 +50,19 @@ export const IconButton = styled(Ripple).attrs((props) => ({
     color: ${(props) => props.theme.color.primary};
   }
 `;
+
+export const MotionIcon = styled(motion.div).attrs((props) => ({
+  initial: { scale: 0 },
+  animate: { rotate: 360, scale: 1 },
+  transition: {
+    type: "spring",
+    stiffness: 260,
+    delay: 0.5,
+    damping: 20,
+  },
+  whileHover: {
+    scale: 1.2,
+    transition: { duration: 0.5 },
+  },
+  whileTap: { scale: 0.9 },
+}))``;

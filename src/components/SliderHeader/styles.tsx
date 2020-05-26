@@ -59,7 +59,7 @@ export const Text = styled.h1`
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: bold;
-  color: ${(props) => props.theme.color.text.secundary};
+  color: ${(props) => props.theme.color.background.default};
 `;
 
 export const Subtitle = styled.p`

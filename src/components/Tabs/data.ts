@@ -81,15 +81,6 @@ export const items: IItems[] = [
               "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
             interest: false,
           },
-          {
-            id: "6",
-            name: "Product 16",
-            price: 160.0,
-            description: "Product description 6",
-            imageUrl:
-              "https://media.fanaticguitars.com/2016/05/alhambra-4p-1.jpg",
-            interest: false,
-          },
         ],
       },
     ],

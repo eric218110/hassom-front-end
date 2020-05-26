@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   display: flex;
@@ -32,7 +33,9 @@ export const ItemsHeader = styled.div`
   padding: 10px;
 `;
 
-export const Text = styled.p`
+export const Text = styled(motion.div).attrs((props) => ({
+  whileTap: { scale: 0.99 },
+}))`
   position: relative;
   border-radius: ${(props) => props.theme.style.borderRadius};
   text-transform: uppercase;
@@ -80,5 +83,3 @@ export const IconContainer = styled.div`
   width: 100%;
   align-items: center;
 `;
-
-export const ContainerIcon = styled.div``;
