@@ -1,3 +1,4 @@
+[image.png](https://postimg.cc/ThXNPGrv)
 # HASSOM
 Projeto da cadeira de **Projeto de Sistemas de Informação**
 
@@ -14,6 +15,7 @@ Projeto da cadeira de **Projeto de Sistemas de Informação**
 * Redux e react-redux
 * React icons
 * React Spring
+* Framer Motion
 * TypeScript
 
 ## Instalação
@@ -30,6 +32,10 @@ $ yarn start
 # test
 $ yarn test
 ````
+
+## Example
+
+[🚀 Overview](https://relaxed-agnesi-081b61.netlify.app/)
 
 ## Equipe
 
