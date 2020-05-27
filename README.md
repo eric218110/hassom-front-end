@@ -34,7 +34,7 @@ $ yarn test
 
 ## Example
 
-[🚀 Overview](https://relaxed-agnesi-081b61.netlify.app/)
+[🚀 Overview :)](https://relaxed-agnesi-081b61.netlify.app/)
 
 ## Equipe
 
