@@ -1,4 +1,3 @@
-[image.png](https://postimg.cc/ThXNPGrv)
 # HASSOM
 Projeto da cadeira de **Projeto de Sistemas de Informação**
 
