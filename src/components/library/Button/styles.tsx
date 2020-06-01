@@ -19,6 +19,7 @@ export const Button = styled(Ripple).attrs((props) => ({
   padding: ${(props) => props.theme.style.padding};
   border-radius: ${(props) => props.theme.style.borderRadius};
   text-transform: uppercase;
+  color: ${(props) => props.theme.color.text.default};
   cursor: pointer;
   box-shadow: ${(props) =>
     !props.noElevation
@@ -43,6 +44,7 @@ export const IconButton = styled(Ripple).attrs((props) => ({
   height: 1;
   padding: 9px;
   border-radius: 50%;
+  color: ${(props) => props.theme.color.primary};
   background-color: ${(props) =>
     props.solid ? props.theme.color.primary : "transparent"};
   cursor: pointer;
@@ -65,4 +67,6 @@ export const MotionIcon = styled(motion.div).attrs((props) => ({
     transition: { duration: 0.5 },
   },
   whileTap: { scale: 0.9 },
-}))``;
+}))`
+  color: ${(props) => props.theme.color.primary};
+`;

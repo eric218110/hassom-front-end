@@ -12,6 +12,8 @@ declare module "styled-components" {
         default: string;
         paper: string;
         hover: string;
+        secundary: string;
+        secundaryVariant: string;
       };
       ripple: string;
       text: {

@@ -5,6 +5,7 @@ import { Body } from "../../components/Body";
 import { useSpring, animated } from "react-spring";
 import { Tabs } from "../../components/Tabs";
 import { Footer } from "../../components/Footer";
+import { ActionsHeader } from "../../components/Header/ActionsHeader";
 
 const Home: React.FC = () => {
   const springHeader = useSpring({
@@ -29,6 +30,7 @@ const Home: React.FC = () => {
     <React.Fragment>
       <animated.div style={springHeader}>
         <Header />
+        <ActionsHeader />
       </animated.div>
       <animated.div style={springSliderHeader}>
         <SliderHeader />

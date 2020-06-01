@@ -2,7 +2,11 @@ import * as React from "react";
 import { ApplicationStateReducer } from "../../store/";
 import { toggleTheme } from "../../store/theme/actions.theme";
 import { ThemeState } from "../../store/theme/types.theme";
-
+import { FiMoreVertical } from "react-icons/fi";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { IconButton, MotionIcon } from "../library/Button/styles";
+import { TextButton } from "../library/Button";
 import {
   Container,
   TopContainer,
@@ -10,14 +14,8 @@ import {
   ItemsHeader,
   TextDecorated,
   TextTitle,
-  BottomContainer,
-  ItemsBottom,
   IconContainer,
 } from "./styles";
-
-import { IconButton, MotionIcon } from "../library/Button/styles";
-import { TextButton } from "../library/Button";
-
 import {
   MdHeadset,
   MdExitToApp,
@@ -25,8 +23,6 @@ import {
   MdBrightness4,
   MdBrightness5,
 } from "react-icons/md";
-import { FiMoreVertical } from "react-icons/fi";
-import { connect } from "react-redux";
 
 interface IProps {
   theme: ThemeState;
@@ -84,9 +80,11 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
                     <MdExitToApp size={24} />
                   </IconButton>
                 ) : (
-                  <IconButton>
-                    <MdPersonPin size={24} />
-                  </IconButton>
+                  <Link to={"login"}>
+                    <IconButton>
+                      <MdPersonPin size={24} />
+                    </IconButton>
+                  </Link>
                 )}
               </MotionIcon>
               <MotionIcon>
@@ -97,23 +95,6 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
             </IconContainer>
           </ItemHeader>
         </TopContainer>
-        <BottomContainer>
-          <ItemsBottom>
-            <TextButton>acessórios</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>categorias</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>meus pedidos</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>ofertas</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>fale conosco</TextButton>
-          </ItemsBottom>
-        </BottomContainer>
       </Container>
     </React.Fragment>
   );
