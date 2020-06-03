@@ -8,6 +8,8 @@ export const dark: DefaultTheme = {
     primaryVariant: "#3700B3",
     secundary: "#55163b",
     secundaryVariant: "#6c1e56",
+    error: "rgb(115, 17, 17)",
+    errorVariant: "#b4201d",
     text: {
       default: "#FAFAFA",
       primary: "#EEEEEE",
@@ -45,6 +47,8 @@ export const light: DefaultTheme = {
     primaryVariant: "#3700B3",
     secundary: "#741F51",
     secundaryVariant: "#902271",
+    error: "rgb(183, 28, 28)",
+    errorVariant: "#EF5350",
     text: {
       default: "#071329",
       primary: "#424242",

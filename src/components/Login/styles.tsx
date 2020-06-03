@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Ripple from "ripple-button";
+import { ToastContainer } from "react-toastify";
 
 interface IPropsButtons {
   secundary?: boolean;
@@ -8,6 +9,9 @@ interface IPropsButtons {
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
+  z-index: 5;
+  position: absolute;
+  width: 100%;
 `;
 
 export const ContentLeft = styled.div`
@@ -72,6 +76,9 @@ export const Inputs = styled.input`
   font-weight: bold;
   letter-spacing: 1px;
   background-color: ${(props) => props.theme.color.background.secundaryVariant};
+  color: ${(props) => props.theme.color.secundary};
+  text-transform: lowercase;
+  font-size: 16px;
 `;
 export const ButtonLogin = styled(Ripple).attrs((props) => ({
   color: props.theme.color.ripple,
@@ -115,4 +122,36 @@ export const SocialButtons = styled.div`
   align-items: center;
   padding: 0 50px 0 50px;
   justify-content: space-around;
+`;
+
+export const StyledContainerToast = styled(ToastContainer).attrs({
+  // custom props
+})`
+  .Toastify__toast-container {
+  }
+  .Toastify__toast {
+  }
+  .Toastify__toast--error {
+    background-color: ${(props) =>
+      props.theme.color.background.secundaryVariant};
+    border-radius: ${(props) => props.theme.style.borderRadius};
+    color: ${(props) => props.theme.color.error};
+  }
+  .Toastify__toast--warning {
+  }
+  .Toastify__toast--success {
+  }
+  .Toastify__toast-body {
+  }
+  .Toastify__progress-bar {
+    background-color: ${(props) => props.theme.color.error};
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  flex: 1;
+  color: red;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
 `;
