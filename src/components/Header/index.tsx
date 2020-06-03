@@ -8,7 +8,7 @@ import { FiMoreVertical, FiLogIn } from "react-icons/fi";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { IconButton, MotionIcon } from "../library/Button/styles";
-import { TextButton } from "../library/Button";
+import { TextButton, Icons } from "../library";
 import {
   Container,
   TopContainer,
@@ -33,10 +33,8 @@ import {
 } from "react-icons/md";
 import { toast, ToastPosition, ToastContainer } from "react-toastify";
 import { BsPersonLinesFill } from "react-icons/bs";
-import { Icons } from "../library/Button/Icon";
 import { Divider } from "../Tabs/styles";
 import { IoMdHelp } from "react-icons/io";
-import { RiLoginCircleLine } from "react-icons/ri";
 import { FaRegUserCircle } from "react-icons/fa";
 interface IProps {
   theme: ThemeState;
@@ -51,6 +49,8 @@ function toastLogout(message: string, position: ToastPosition) {
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
+    pauseOnHover: false,
+    pauseOnFocusLoss: false,
     rtl: false,
     draggable: true,
   });
@@ -74,9 +74,11 @@ const Header: React.FC<IProps> = ({
             </MotionIcon>
           </ItemHeader>
           <ItemsHeader>
-            <TextTitle>
-              <TextButton>hassom</TextButton>
-            </TextTitle>
+            <Link to={"/"}>
+              <TextTitle>
+                <TextButton>hassom</TextButton>
+              </TextTitle>
+            </Link>
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
@@ -128,29 +130,41 @@ const Header: React.FC<IProps> = ({
                 menu={
                   <MenuContent>
                     <MenuList>
-                      <MenuItem>
-                        <Icons primary size={18} IconType={BsPersonLinesFill} />
-                        <Text>perfil</Text>
-                      </MenuItem>
-                      <MenuItem>
-                        <Icons primary size={18} IconType={MdSettings} />
-                        <Text>configurações</Text>
-                      </MenuItem>
-                      <MenuItem>
-                        <Icons primary size={18} IconType={IoMdHelp} />
-                        <Text>ajuda</Text>
-                      </MenuItem>
-                      <Divider />
-                      {auth.userName === undefined ? (
-                        <MenuItem>
-                          <Icons primary size={18} IconType={FaRegUserCircle} />
-                          <Text>{auth.userName}</Text>
-                        </MenuItem>
+                      {!auth.active ? (
+                        <Link to={"login"}>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={FiLogIn} />
+                            <Text>Login</Text>
+                          </MenuItem>
+                        </Link>
                       ) : (
-                        <MenuItem>
-                          <Icons primary size={18} IconType={FiLogIn} />
-                          <Text>Login</Text>
-                        </MenuItem>
+                        <React.Fragment>
+                          <MenuItem>
+                            <Icons
+                              primary
+                              size={18}
+                              IconType={BsPersonLinesFill}
+                            />
+                            <Text>perfil</Text>
+                          </MenuItem>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={MdSettings} />
+                            <Text>configurações</Text>
+                          </MenuItem>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={IoMdHelp} />
+                            <Text>ajuda</Text>
+                          </MenuItem>
+                          <Divider />
+                          <MenuItem>
+                            <Icons
+                              primary
+                              size={18}
+                              IconType={FaRegUserCircle}
+                            />
+                            <Text>{auth.userName}</Text>
+                          </MenuItem>
+                        </React.Fragment>
                       )}
                     </MenuList>
                   </MenuContent>

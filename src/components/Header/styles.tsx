@@ -71,6 +71,7 @@ export const IconContainer = styled.div`
 export const MenuContainer = styled(MenuButton).attrs((props) => ({}))`
   background-color: transparent;
   border: none;
+  z-index: 10;
 `;
 
 export const MenuContent = styled.div`
@@ -79,9 +80,12 @@ export const MenuContent = styled.div`
   box-shadow: 0 5px 10px ${(props) => props.theme.color.background.paper},
     0 1px 2px ${(props) => props.theme.color.background.paper};
   margin-top: 10px;
+  z-index: 10;
 `;
 
 export const MenuItem = styled(ItemMenu)`
+  z-index: 10;
+
   border-radius: 10px;
   padding: 10px 30px 10px 30px;
   width: 100%;

@@ -9,17 +9,17 @@ interface IProps {
 }
 
 export const Button = styled(Ripple).attrs((props) => ({
-  color: props.theme.color.ripple,
+  color: props.theme.color.background.secundary,
   duration: props.theme.time.ripple,
 }))<IProps>`
   display: flex;
+  color: ${(props) => props.theme.color.primary};
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: ${(props) => props.theme.style.padding};
   border-radius: ${(props) => props.theme.style.borderRadius};
   text-transform: uppercase;
-  color: ${(props) => props.theme.color.text.default};
   cursor: pointer;
   box-shadow: ${(props) =>
     !props.noElevation
@@ -35,7 +35,7 @@ export const Button = styled(Ripple).attrs((props) => ({
 `;
 
 export const IconButton = styled(Ripple).attrs((props) => ({
-  color: props.theme.color.ripple,
+  color: props.theme.color.background.secundary,
   duration: props.theme.time.ripple,
 }))<IProps>`
   display: flex;
@@ -54,6 +54,7 @@ export const IconButton = styled(Ripple).attrs((props) => ({
 `;
 
 export const MotionIcon = styled(motion.div).attrs((props) => ({
+  style: { cursor: "hover" },
   initial: { scale: 0 },
   animate: { rotate: 360, scale: 1 },
   transition: {
