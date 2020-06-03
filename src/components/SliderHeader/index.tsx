@@ -64,7 +64,7 @@ export const SliderHeader: React.FC = () => {
                 <Subtitle>{content.subTitle}</Subtitle>
                 <Actions>
                   <MotionIcon>
-                    <IconButton solid>
+                    <IconButton>
                       <RiExternalLinkLine size={24} />
                     </IconButton>
                   </MotionIcon>

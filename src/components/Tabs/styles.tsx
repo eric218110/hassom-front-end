@@ -110,17 +110,21 @@ export const ContainerPrice = styled.div`
 `;
 
 export const Real = styled.h1`
+  color: ${(prpos) => prpos.theme.color.text.default};
   font-size: 20px;
   align-self: baseline;
 `;
 
 export const Cents = styled.h4`
+  color: ${(prpos) => prpos.theme.color.text.default};
   font-size: 10px;
   align-self: flex-start;
   justify-self: start;
 `;
 
-export const SubtitlePrice = styled.h6``;
+export const SubtitlePrice = styled.h6`
+  color: ${(prpos) => prpos.theme.color.text.default};
+`;
 
 export const ContentPriceAndActions = styled.div`
   display: flex;
@@ -138,6 +142,7 @@ export const ContentPrice = styled.div`
 `;
 
 export const DescriptionPanel = styled.p`
+  color: ${(prpos) => prpos.theme.color.text.default};
   margin-top: 20px;
   font-size: 12px;
 `;

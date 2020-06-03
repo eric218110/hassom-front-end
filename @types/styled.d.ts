@@ -8,10 +8,14 @@ declare module "styled-components" {
       primaryVariant: string;
       secundary: string;
       secundaryVariant: string;
+      error: string;
+      errorVariant: string;
       background: {
         default: string;
         paper: string;
         hover: string;
+        secundary: string;
+        secundaryVariant: string;
       };
       ripple: string;
       text: {

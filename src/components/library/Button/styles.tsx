@@ -9,10 +9,11 @@ interface IProps {
 }
 
 export const Button = styled(Ripple).attrs((props) => ({
-  color: props.theme.color.ripple,
+  color: props.theme.color.background.secundary,
   duration: props.theme.time.ripple,
 }))<IProps>`
   display: flex;
+  color: ${(props) => props.theme.color.primary};
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -34,7 +35,7 @@ export const Button = styled(Ripple).attrs((props) => ({
 `;
 
 export const IconButton = styled(Ripple).attrs((props) => ({
-  color: props.theme.color.ripple,
+  color: props.theme.color.background.secundary,
   duration: props.theme.time.ripple,
 }))<IProps>`
   display: flex;
@@ -43,6 +44,7 @@ export const IconButton = styled(Ripple).attrs((props) => ({
   height: 1;
   padding: 9px;
   border-radius: 50%;
+  color: ${(props) => props.theme.color.primary};
   background-color: ${(props) =>
     props.solid ? props.theme.color.primary : "transparent"};
   cursor: pointer;
@@ -52,6 +54,7 @@ export const IconButton = styled(Ripple).attrs((props) => ({
 `;
 
 export const MotionIcon = styled(motion.div).attrs((props) => ({
+  style: { cursor: "hover" },
   initial: { scale: 0 },
   animate: { rotate: 360, scale: 1 },
   transition: {
@@ -65,4 +68,6 @@ export const MotionIcon = styled(motion.div).attrs((props) => ({
     transition: { duration: 0.5 },
   },
   whileTap: { scale: 0.9 },
-}))``;
+}))`
+  color: ${(props) => props.theme.color.primary};
+`;

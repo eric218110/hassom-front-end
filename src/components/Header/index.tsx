@@ -2,7 +2,13 @@ import * as React from "react";
 import { ApplicationStateReducer } from "../../store/";
 import { toggleTheme } from "../../store/theme/actions.theme";
 import { ThemeState } from "../../store/theme/types.theme";
-
+import { destroySessionAuth } from "../../store/auth/actions.auth";
+import { AuthState } from "../../store/auth/types.auth";
+import { FiMoreVertical, FiLogIn } from "react-icons/fi";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { IconButton, MotionIcon } from "../library/Button/styles";
+import { TextButton, Icons } from "../library";
 import {
   Container,
   TopContainer,
@@ -10,32 +16,52 @@ import {
   ItemsHeader,
   TextDecorated,
   TextTitle,
-  BottomContainer,
-  ItemsBottom,
   IconContainer,
+  MenuContainer,
+  MenuContent,
+  MenuList,
+  MenuItem,
+  Text,
 } from "./styles";
-
-import { IconButton, MotionIcon } from "../library/Button/styles";
-import { TextButton } from "../library/Button";
-
 import {
   MdHeadset,
   MdExitToApp,
   MdPersonPin,
   MdBrightness4,
   MdBrightness5,
+  MdSettings,
 } from "react-icons/md";
-import { FiMoreVertical } from "react-icons/fi";
-import { connect } from "react-redux";
-
+import { toast, ToastPosition, ToastContainer } from "react-toastify";
+import { BsPersonLinesFill } from "react-icons/bs";
+import { Divider } from "../Tabs/styles";
+import { IoMdHelp } from "react-icons/io";
+import { FaRegUserCircle } from "react-icons/fa";
 interface IProps {
   theme: ThemeState;
   toggleTheme: typeof toggleTheme;
+  auth: AuthState;
+  destroySessionAuth: typeof destroySessionAuth;
 }
 
-const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
-  const userActive = false;
+function toastLogout(message: string, position: ToastPosition) {
+  toast(message, {
+    position,
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    pauseOnFocusLoss: false,
+    rtl: false,
+    draggable: true,
+  });
+}
 
+const Header: React.FC<IProps> = ({
+  theme,
+  toggleTheme,
+  auth,
+  destroySessionAuth,
+}) => {
   return (
     <React.Fragment>
       <Container>
@@ -48,9 +74,11 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
             </MotionIcon>
           </ItemHeader>
           <ItemsHeader>
-            <TextTitle>
-              <TextButton>hassom</TextButton>
-            </TextTitle>
+            <Link to={"/"}>
+              <TextTitle>
+                <TextButton>hassom</TextButton>
+              </TextTitle>
+            </Link>
             <TextDecorated>Sua loja de música</TextDecorated>
           </ItemsHeader>
           <ItemHeader>
@@ -79,41 +107,79 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
                 </MotionIcon>
               )}
               <MotionIcon>
-                {userActive ? (
-                  <IconButton>
+                {auth.active ? (
+                  <IconButton
+                    onClick={() => {
+                      toastLogout("Saindo ...", "top-right");
+                      setTimeout(() => {
+                        destroySessionAuth({});
+                      }, 3000);
+                    }}
+                  >
                     <MdExitToApp size={24} />
                   </IconButton>
                 ) : (
-                  <IconButton>
-                    <MdPersonPin size={24} />
-                  </IconButton>
+                  <Link to={"login"}>
+                    <IconButton>
+                      <MdPersonPin size={24} />
+                    </IconButton>
+                  </Link>
                 )}
               </MotionIcon>
-              <MotionIcon>
-                <IconButton>
-                  <FiMoreVertical size={24} />
-                </IconButton>
-              </MotionIcon>
+              <MenuContainer
+                menu={
+                  <MenuContent>
+                    <MenuList>
+                      {!auth.active ? (
+                        <Link to={"login"}>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={FiLogIn} />
+                            <Text>Login</Text>
+                          </MenuItem>
+                        </Link>
+                      ) : (
+                        <React.Fragment>
+                          <MenuItem>
+                            <Icons
+                              primary
+                              size={18}
+                              IconType={BsPersonLinesFill}
+                            />
+                            <Text>perfil</Text>
+                          </MenuItem>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={MdSettings} />
+                            <Text>configurações</Text>
+                          </MenuItem>
+                          <MenuItem>
+                            <Icons primary size={18} IconType={IoMdHelp} />
+                            <Text>ajuda</Text>
+                          </MenuItem>
+                          <Divider />
+                          <MenuItem>
+                            <Icons
+                              primary
+                              size={18}
+                              IconType={FaRegUserCircle}
+                            />
+                            <Text>{auth.userName}</Text>
+                          </MenuItem>
+                        </React.Fragment>
+                      )}
+                    </MenuList>
+                  </MenuContent>
+                }
+              >
+                <MotionIcon>
+                  <IconButton>
+                    <FiMoreVertical size={24} />
+                  </IconButton>
+                </MotionIcon>
+              </MenuContainer>
             </IconContainer>
           </ItemHeader>
         </TopContainer>
-        <BottomContainer>
-          <ItemsBottom>
-            <TextButton>acessórios</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>categorias</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>meus pedidos</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>ofertas</TextButton>
-          </ItemsBottom>
-          <ItemsBottom>
-            <TextButton>fale conosco</TextButton>
-          </ItemsBottom>
-        </BottomContainer>
+        <ToastContainer />
       </Container>
     </React.Fragment>
   );
@@ -121,6 +187,9 @@ const Header: React.FC<IProps> = ({ theme, toggleTheme }) => {
 
 const MapStateToProps = (state: ApplicationStateReducer) => ({
   theme: state.theme,
+  auth: state.auth,
 });
 
-export default connect(MapStateToProps, { toggleTheme })(Header);
+export default connect(MapStateToProps, { toggleTheme, destroySessionAuth })(
+  Header
+);
